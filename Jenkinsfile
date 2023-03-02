@@ -24,12 +24,6 @@ pipeline{
             sh 'docker ps'
         }
     }
-    stage("Delete container"){
-        steps{
-            sh 'CONTAINER_ID=`docker ps | grep "docker-project" | awk '{print $1}'`'
-            sh 'docker stop $CONTAINER_ID'
-            sh 'docker ps'
-        }
     }
   }
 }
