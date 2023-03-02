@@ -1,5 +1,6 @@
 pipeline{
     agent any
+    stages{
     stage("Build"){
         steps{
             sh 'mvn clean install -Dskiptests'
@@ -30,4 +31,5 @@ pipeline{
             sh 'docker ps'
         }
     }
+  }
 }
